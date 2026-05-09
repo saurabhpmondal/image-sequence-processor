@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERP Image Sequence Processor</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+
+  <div class="app-container">
+
+    <header class="top-header">
+      <div>
+        <h1>ERP Image Sequence Processor</h1>
+        <p>
+          Upload CSV → Auto Process → Download Final CSV
+        </p>
+      </div>
+    </header>
+
+    <section class="upload-card">
+      <h2>Upload CSV File</h2>
+
+      <input type="file" id="csvFile" accept=".csv">
+
+      <div class="file-info" id="fileInfo">
+        No file selected
+      </div>
+
+      <button id="processBtn">
+        Process File
+      </button>
+    </section>
+
+    <section class="summary-grid">
+
+      <div class="summary-box">
+        <div class="summary-title">Total Rows</div>
+        <div class="summary-value" id="totalRows">0</div>
+      </div>
+
+      <div class="summary-box">
+        <div class="summary-title">Total ERP SKU</div>
+        <div class="summary-value" id="totalSku">0</div>
+      </div>
+
+      <div class="summary-box">
+        <div class="summary-title">Max Images</div>
+        <div class="summary-value" id="maxImages">0</div>
+      </div>
+
+    </section>
+
+    <section class="preview-section">
+      <div class="section-header">
+        <h2>Preview</h2>
+      </div>
+
+      <div class="table-wrap">
+        <table id="previewTable">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="export-section">
+      <button id="downloadBtn" disabled>
+        Download Processed CSV
+      </button>
+    </section>
+
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>
